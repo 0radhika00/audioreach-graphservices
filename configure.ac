@@ -91,6 +91,16 @@ fi
 
 AM_CONDITIONAL(USE_DUMMY_DIAG, test "x${with_dummy_diag}" = "xyes")
 
+
+AC_ARG_WITH([libdaig_headers],
+  AC_HELP_STRING([--with-libdaig_headers],
+    [use libdaig headers only (default is no)]),
+  [with_libdiag_headers=$withval],
+  [with_libdiag_headers=no])
+
+AM_CONDITIONAL([USE_LIBDIAG_HEADERS, test "x${with_libdiag_headers}" = "xyes"])
+
+
 AC_ARG_WITH([audio_dma_support],
     AS_HELP_STRING([use audio_dma_support (default is no)]),
     [with_audio_dma_support=$withval],
